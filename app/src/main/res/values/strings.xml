@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">parcial2</string>
+    <string name="textoBtn">Borrar</string>
+    <string name="textoDistancia">Distancia: 0 mts</string>
+    <string name="distancia">Distancia: %1$.0f mts</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="snackbar_dismiss_label">Cerrar</string>
 </resources>

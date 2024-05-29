@@ -1,31 +1,36 @@
 package com.example.parcial2.activities
 
 import android.content.Intent
+import android.location.Location
+import android.location.LocationRequest
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.parcial2.R
 import com.example.parcial2.databinding.ActivityMainBinding
-import com.example.parcial2.databinding.ActivityMapsBinding
+import com.example.parcial2.fragments.MapsFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var fragment: MapsFragment
+    lateinit var textoDistancia: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+
+        textoDistancia = binding.textoDistancia
+
+        fragment = supportFragmentManager.findFragmentById(R.id.mapFragment) as MapsFragment
 
         binding.button.setOnClickListener{
-            val intent = Intent(this, MapsActivity::class.java)
-            startActivity(intent)
+            //Borrar los marcadores y las lineas del mapa
+            fragment.clearMap()
         }
     }
+
 }

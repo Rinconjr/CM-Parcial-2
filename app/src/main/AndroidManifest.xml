@@ -30,7 +30,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyA0tRZHUAyib0Nf_iNRx-ceCUKY_ImaHqg" />
+            android:value="AIzaSyCjonHDvRna94GF2Rjc9d7Uer4RlG8Isr8" />
         <activity
             android:name=".activities.MainActivity"
             android:exported="true">
@@ -40,8 +40,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.MapsActivity"
-            android:exported="true"/>
     </application>
 
 </manifest>
